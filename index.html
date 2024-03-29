@@ -13,10 +13,23 @@
     <title>Pokedex</title>
 </head>
 
-<body>
-    <header></header>
+<body onload="loadApi()">
+    <header>
+        <img class="logo-header" src="./src/img/logo/logo.png" alt="poke-logo">
+        <div class="input-container">
+            <input type="text" placeholder="Search">
+            <img class="search-icon" src="./src/img/icons/search-icon.png" alt="search-icon">
+        </div>
+    </header>
     <div class="hamburger-menu"></div>
-    <section></section>
+    <section id="renderContainer">
+        <div class="poke-card">
+            <span class="card-number">#1</span>
+            <img class="pokemon-img"
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
+                alt="">
+        </div>
+    </section>
     <footer></footer>
 </body>
 
