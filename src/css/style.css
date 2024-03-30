@@ -169,19 +169,19 @@ section {
 
 /* Klassen, die Animationen zuweisen */
 .hide-top {
-    animation: slideUp 3s forwards;
+    animation: slideUp 1.5s forwards;
 }
 
 .hide-bottom {
-    animation: slideDown 3s forwards;
+    animation: slideDown 1.5s forwards;
 }
 
 .show-top {
-    animation: slideDownBack 3s forwards;
+    animation: slideDownBack 1.5s forwards;
 }
 
 .show-bottom {
-    animation: slideUpBack 3s forwards;
+    animation: slideUpBack 1.5s forwards;
 }
 
 .light-container {
