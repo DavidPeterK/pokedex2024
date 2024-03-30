@@ -167,22 +167,6 @@ section {
     object-fit: cover;
 }
 
-/* Klassen, die Animationen zuweisen */
-.hide-top {
-    animation: slideUp 1.5s forwards;
-}
-
-.hide-bottom {
-    animation: slideDown 1.5s forwards;
-}
-
-.show-top {
-    animation: slideDownBack 1.5s forwards;
-}
-
-.show-bottom {
-    animation: slideUpBack 1.5s forwards;
-}
 
 .light-container {
     position: absolute;
@@ -207,6 +191,10 @@ section {
     margin-right: -20px;
 }
 
+.d-none {
+    display: none;
+}
+
 @media (max-width: 1500px) {
     .light-container {
         margin-left: -10px;
@@ -220,60 +208,4 @@ section {
         min-width: 120px;
         min-height: 120px;
     }
-}
-
-@keyframes blinkAnimation {
-    0% {
-        opacity: 1;
-        rotate: 0deg;
-    }
-
-    50% {
-        opacity: 0;
-        rotate: 180deg;
-    }
-
-    100% {
-        opacity: 1;
-        rotate: 360deg;
-    }
-}
-
-/* Animation für das Verschwinden nach oben */
-@keyframes slideUp {
-    to {
-        transform: translateY(-150%);
-    }
-}
-
-/* Animation für das Verschwinden nach unten */
-@keyframes slideDown {
-    to {
-        transform: translateY(150%);
-    }
-}
-
-@keyframes slideDownBack {
-    from {
-        transform: translateY(-150%);
-    }
-
-    to {
-        transform: translateY(0);
-    }
-}
-
-/* Animation für das Erscheinen von unten */
-@keyframes slideUpBack {
-    from {
-        transform: translateY(150%);
-    }
-
-    to {
-        transform: translateY(0);
-    }
-}
-
-.d-none {
-    display: none;
 }
