@@ -6,8 +6,9 @@ footer {
     width: calc(100% - 24px);
     padding: 0px 12px;
     height: 100px;
-    background-color: black;
+    background-color: white;
     z-index: 5;
     bottom: 0;
     left: 0;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15);
 }
