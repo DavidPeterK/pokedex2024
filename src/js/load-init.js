@@ -83,6 +83,7 @@ function fillSummary() {
         summaryDetails.push(pokeInterFace(i, nameEn, nameDe, types, statsArray, image))
     }
     console.log('summary', summaryDetails);
+    hideImages();
     renderPokemon();
 }
 

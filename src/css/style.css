@@ -1,7 +1,6 @@
 body {
     margin: 0;
-    overflow-x: hidden;
-    background-color: rgb(119, 115, 115);
+    background-color: black;
     font-family: Poppins;
 }
 
@@ -9,6 +8,8 @@ section {
     position: fixed;
     top: 100px;
     left: 0;
+    right: 0;
+    justify-self: center;
     bottom: 100px;
     padding: 20px 12px;
     width: calc(100% - 24px);
@@ -17,19 +18,20 @@ section {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: flex-start;
-    gap: 25px;
+    gap: 35px;
     overflow-y: auto;
+    max-width: calc(1500px - 24px);
     background: linear-gradient(180deg, rgb(228, 31, 89) 1%, black 5%, black 50%, black 95%, white 99%) !important;
 }
 
 :root {
-    --Grass: rgb(31, 247, 31);
-    --Fire: rgb(255, 97, 97);
+    --Grass: rgb(103, 255, 26);
+    --Fire: rgb(234, 124, 60);
     --Water: rgb(104, 155, 250);
     --Normal: rgb(242, 214, 166);
     --Bug: rgb(125, 185, 125);
     --Flying: rgb(199, 235, 248);
-    --Poison: #5f0e8e;
+    --Poison: #7d449e;
     --Ground: rgb(160, 108, 44);
     --Fairy: #f8aaf6;
     --Psychic: #734171;
@@ -56,7 +58,7 @@ section {
 }
 
 .poke-card:hover {
-    background: linear-gradient(180deg, red 35%, black 50%, white 65%) !important;
+    background: linear-gradient(180deg, rgb(228, 31, 89) 45%, black 50%, white 55%) !important;
 }
 
 .card-bg-img {
@@ -67,7 +69,7 @@ section {
     height: 262px;
     z-index: 1;
     border-radius: 50%;
-    filter: contrast(0.45);
+    filter: contrast(0.0);
 }
 
 .card-bg-activ {
@@ -83,6 +85,12 @@ section {
     left: calc(50% - width);
     text-align: center;
     line-height: 115%;
+    z-index: 3;
+    transition: all 200ms;
+}
+
+.card-number-activ {
+    transform: scale(1.12) translateY(-5px);
 }
 
 .pokemon-img {
@@ -92,7 +100,7 @@ section {
     width: 160px;
     height: auto;
     z-index: 2;
-    transition: all 250ms;
+    transition: all 200ms;
 }
 
 .pokemon-img-activ {
@@ -119,8 +127,153 @@ section {
     font-weight: 600;
     z-index: 3;
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+    transition: all 200ms;
 }
 
 .element-span-activ {
     transform: scale(1.1);
+}
+
+/*loading screen---------------------------------------------------------------*/
+.loading-screen {
+    position: fixed;
+    justify-self: center;
+    top: 100px;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: calc(100% - 200px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    max-width: 1500px;
+}
+
+.loading-img-top {
+    width: 100%;
+    height: 50%;
+    object-position: bottom;
+    object-fit: cover;
+}
+
+.loading-img-bottom {
+    width: 100%;
+    height: 50%;
+    object-position: top;
+    object-fit: cover;
+}
+
+/* Klassen, die Animationen zuweisen */
+.hide-top {
+    animation: slideUp 3s forwards;
+}
+
+.hide-bottom {
+    animation: slideDown 3s forwards;
+}
+
+.show-top {
+    animation: slideDownBack 3s forwards;
+}
+
+.show-bottom {
+    animation: slideUpBack 3s forwards;
+}
+
+.light-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 30vw;
+    height: 30vw;
+    margin-left: -20px;
+    background-color: rgb(255, 234, 116);
+    min-width: 229px;
+    min-height: 229px;
+    max-width: 460px;
+    max-height: 460px;
+    animation: blinkAnimation 3s linear infinite;
+}
+
+.light-pika-img {
+    width: 80%;
+    height: auto;
+    margin-right: -20px;
+}
+
+@media (max-width: 1500px) {
+    .light-container {
+        margin-left: -10px;
+    }
+}
+
+@media (max-height: 780px) {
+    .light-container {
+        margin-left: -1.75vw;
+        background-color: rgb(255, 234, 116);
+        min-width: 120px;
+        min-height: 120px;
+    }
+}
+
+@keyframes blinkAnimation {
+    0% {
+        opacity: 1;
+        rotate: 0deg;
+    }
+
+    50% {
+        opacity: 0;
+        rotate: 180deg;
+    }
+
+    100% {
+        opacity: 1;
+        rotate: 360deg;
+    }
+}
+
+/* Animation für das Verschwinden nach oben */
+@keyframes slideUp {
+    to {
+        transform: translateY(-150%);
+    }
+}
+
+/* Animation für das Verschwinden nach unten */
+@keyframes slideDown {
+    to {
+        transform: translateY(150%);
+    }
+}
+
+@keyframes slideDownBack {
+    from {
+        transform: translateY(-150%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Animation für das Erscheinen von unten */
+@keyframes slideUpBack {
+    from {
+        transform: translateY(150%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.d-none {
+    display: none;
 }

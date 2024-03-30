@@ -7,8 +7,13 @@ footer {
     padding: 0px 12px;
     height: 100px;
     background-color: white;
-    z-index: 5;
+    z-index: 4;
     bottom: 0;
     left: 0;
+    right: 0;
+    justify-self: center;
     box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15);
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    max-width: calc(1500px - 24px);
 }

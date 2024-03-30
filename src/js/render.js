@@ -16,7 +16,7 @@ function renderPokemon() {
         render.innerHTML += /*HTML*/`
             <div id='card${i}' onmouseout='cardHoverOut(${i})' onmouseover='cardHoverActiv(${i})' class="poke-card" style='background: linear-gradient(180deg, var(--${type1}) 25%, black 50%, var(--${type2}) 75%)'>
                 <img id='cardBg${i}' class="card-bg-img" src="./src/img/background/card-background.png" alt="card-bg">
-                <span class="card-number">#${i + 1}<br>${name}</span>
+                <span id='cardNumber${i}' class="card-number">#${i + 1}<br>${name}</span>
                 <img id='cardPokemon${i}' class="pokemon-img" src="${pokePic}" alt="poke-img">
                 ${typeRule(i)}
             </div>
@@ -29,11 +29,13 @@ function cardHoverActiv(i) {
     let pokemon = document.getElementById('cardPokemon' + i);
     let typA = document.getElementById('cardSpanA' + i);
     let typB = document.getElementById('cardSpanB' + i);
+    let cardNumber = document.getElementById('cardNumber' + i);
 
     if (backGround) backGround.classList.add('card-bg-activ');
     if (pokemon) pokemon.classList.add('pokemon-img-activ');
     if (typA) typA.classList.add('element-span-activ');
     if (typB) typB.classList.add('element-span-activ'); // Fügt die Klasse hinzu, wenn typB existiert.
+    if (cardNumber) cardNumber.classList.add('card-number-activ'); // Fügt die Klasse hinzu, wenn typB existiert.
 }
 
 
@@ -42,11 +44,13 @@ function cardHoverOut(i) {
     let pokemon = document.getElementById('cardPokemon' + i);
     let typA = document.getElementById('cardSpanA' + i);
     let typB = document.getElementById('cardSpanB' + i);
+    let cardNumber = document.getElementById('cardNumber' + i);
 
     if (backGround) backGround.classList.remove('card-bg-activ');
     if (pokemon) pokemon.classList.remove('pokemon-img-activ');
     if (typA) typA.classList.remove('element-span-activ');
-    if (typB) typB.classList.remove('element-span-activ'); // Prüft, ob typB existiert, bevor versucht wird, eine Klasse zu entfernen.
+    if (typB) typB.classList.remove('element-span-activ');
+    if (cardNumber) cardNumber.classList.remove('card-number-activ');
 }
 
 
@@ -79,5 +83,28 @@ function nameRule(i) {
     } else {
         return summaryDetails[i].names.de;
     }
+}
+
+// Funktion, um die Bilder verschwinden zu lassen
+function hideImages() {
+    document.querySelector('.light-container').classList.add('d-none');
+    document.querySelector('.loading-img-top').classList.add('hide-top');
+    document.querySelector('.loading-img-bottom').classList.add('hide-bottom');
+}
+
+// Funktion, um die Bilder wieder anzuzeigen
+function showImages() {
+    const pikaImg = document.querySelector('.light-container');
+    const topImg = document.querySelector('.loading-img-top');
+    const bottomImg = document.querySelector('.loading-img-bottom');
+    topImg.classList.remove('hide-top');
+    bottomImg.classList.remove('hide-bottom');
+    topImg.classList.add('show-top');
+    bottomImg.classList.add('show-bottom');
+    setTimeout(() => {
+        pikaImg.classList.remove('d-none');
+        topImg.classList.remove('show-top');
+        bottomImg.classList.remove('show-bottom');
+    }, 2900); // Stelle sicher, dass dies der Dauer deiner Animation entspricht
 }
 

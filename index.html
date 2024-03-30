@@ -17,15 +17,21 @@
 
 <body onload="loadApi()">
     <header>
-        <img class="logo-header" src="./src/img/logo/logo.png" alt="poke-logo">
+        <img onclick="showImages()" class="logo-header" src="./src/img/logo/logo.png" alt="poke-logo">
         <div class="input-container">
             <input type="text" placeholder="Search">
             <img class="search-icon" src="./src/img/icons/search-icon.png" alt="search-icon">
         </div>
     </header>
+    <div class="loading-screen">
+        <div class="light-container">
+            <img class="light-pika-img" src="./src/img/icons/light-pika.png" alt="pika-logo">
+        </div>
+        <img class="loading-img-top" src="./src/img/background/loadscreen-up.png" alt="loading-up">
+        <img class="loading-img-bottom" src="./src/img/background/loadscreen-down.png" alt="loading-down">
+    </div>
     <div class="hamburger-menu"></div>
-    <section id="renderContainer">
-    </section>
+    <section id="renderContainer"></section>
     <footer></footer>
 </body>
 
