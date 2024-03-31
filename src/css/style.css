@@ -73,6 +73,7 @@ section {
 }
 
 .card-bg-activ {
+    box-shadow: 0 0 5px white;
     filter: contrast(1) !important;
 }
 
@@ -87,6 +88,7 @@ section {
     line-height: 115%;
     z-index: 3;
     transition: all 200ms;
+    text-shadow: 0 0 2.5px white;
 }
 
 .card-number-activ {
@@ -104,7 +106,7 @@ section {
 }
 
 .pokemon-img-activ {
-    transform: scale(1.12) translateY(-5px);
+    transform: scale(1.2) translateY(-5px);
 }
 
 .type-container {
@@ -131,6 +133,7 @@ section {
 }
 
 .element-span-activ {
+    margin-bottom: -10px;
     transform: scale(1.1);
 }
 

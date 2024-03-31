@@ -1,3 +1,32 @@
+function cardHoverActiv(i) {
+    let backGround = document.getElementById('cardBg' + i);
+    let pokemon = document.getElementById('cardPokemon' + i);
+    let typA = document.getElementById('cardSpanA' + i);
+    let typB = document.getElementById('cardSpanB' + i);
+    let cardNumber = document.getElementById('cardNumber' + i);
+
+    if (backGround) backGround.classList.add('card-bg-activ');
+    if (pokemon) pokemon.classList.add('pokemon-img-activ');
+    if (typA) typA.classList.add('element-span-activ');
+    if (typB) typB.classList.add('element-span-activ'); // Fügt die Klasse hinzu, wenn typB existiert.
+    if (cardNumber) cardNumber.classList.add('card-number-activ'); // Fügt die Klasse hinzu, wenn typB existiert.
+}
+
+
+function cardHoverOut(i) {
+    let backGround = document.getElementById('cardBg' + i);
+    let pokemon = document.getElementById('cardPokemon' + i);
+    let typA = document.getElementById('cardSpanA' + i);
+    let typB = document.getElementById('cardSpanB' + i);
+    let cardNumber = document.getElementById('cardNumber' + i);
+
+    if (backGround) backGround.classList.remove('card-bg-activ');
+    if (pokemon) pokemon.classList.remove('pokemon-img-activ');
+    if (typA) typA.classList.remove('element-span-activ');
+    if (typB) typB.classList.remove('element-span-activ');
+    if (cardNumber) cardNumber.classList.remove('card-number-activ');
+}
+
 function hideImages() {
     document.querySelector('.light-container').classList.add('d-none');
     document.querySelector('.loading-img-top').classList.add('hide-top');
